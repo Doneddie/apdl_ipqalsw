@@ -1,0 +1,469 @@
+{% load static %}
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPQA Leader Standard Work Form</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/lsw_form.css' %}">
+    {% endblock %}
+</head>
+<body class="container py-5">
+    <h2>IPQA Leader Standard Work Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- General Information -->
+        <h3>General Information</h3>
+        <div class="mb-3">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            {{ form.shift.label_tag }}
+            {{ form.shift }}
+        </div>
+        <div class="mb-3">
+            {{ form.date.label_tag }}
+            {{ form.date }}
+        </div>
+        <div class="mb-3">
+            {{ form.sections_supervised.label_tag }}
+            {{ form.sections_supervised }}
+        </div>
+        
+        <!-- STORES Section (wrapped in a div for toggling) -->
+        <div id="stores-section" class="d-none">
+            <h3>STORES</h3>
+            <div class="mb-3">
+                {{ form.stores_cleanliness.label_tag }} 
+                {{ form.stores_cleanliness }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_environmental.label_tag }} 
+                {{ form.stores_environmental }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_line_clearance.label_tag }} 
+                {{ form.stores_line_clearance }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_calibration.label_tag }} 
+                {{ form.stores_calibration }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_material_received.label_tag }} 
+                {{ form.stores_material_received }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_supervise_sampling.label_tag }} 
+                {{ form.stores_supervise_sampling }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_material_issued.label_tag }} 
+                {{ form.stores_material_issued }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_released_rm.label_tag }} 
+                {{ form.stores_released_rm }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_status_board.label_tag }} 
+                {{ form.stores_status_board }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_bmr_online.label_tag }} 
+                {{ form.stores_bmr_online }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_logbooks.label_tag }} 
+                {{ form.stores_logbooks }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_verify_rejections.label_tag }} 
+                {{ form.stores_verify_rejections }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_status_labels.label_tag }} 
+                {{ form.stores_status_labels }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_batches_received.label_tag }} 
+                {{ form.stores_batches_received }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_aql_checks.label_tag }} 
+                {{ form.stores_aql_checks }}
+            </div>
+            <div class="mb-3">
+                {{ form.stores_report.label_tag }}
+                {{ form.stores_report }}
+            </div>
+        </div>
+
+        <!-- WATER TREATMENT PLANT Section -->
+        <div id="wtp-section" class="d-none">
+            <h3>Water Treatment Plant</h3>
+            <div class="mb-3">
+                {{ form.wtp_cleanliness.label_tag }} 
+                {{ form.wtp_cleanliness }}
+            </div>
+            <div class="mb-3">
+                {{ form.wtp_verify ro water generation report.label_tag }} 
+                {{ form.wtp_verify ro water generation report }}
+            </div>
+            <div class="mb-3">
+                {{ form.wtp_verify wfi system report.label_tag }} 
+                {{ form.wtp_verify wfi system report }}
+            </div>
+            <div class="mb-3">
+                {{ form.wtp_verify rowd report.label_tag }} 
+                {{ form.wtp_verify rowd report }}
+            </div>
+            <div class="mb-3">
+                {{ form.wtp_verification of logbooks.label_tag }} 
+                {{ form.wtp_verification of logbooks }}
+            </div>
+            <div class="mb-3">
+                {{ form.wtp_report.label_tag }}
+                {{ form.wtp_report }}
+            </div>
+        </div>
+
+        <!-- DISPENSING Section -->
+        <div id="dispensing-section" class="d-none">
+            <h3>DISPENSING</h3>
+            <div class="mb-3">
+                {{ form.dispensing_cleanliness.label_tag }} 
+                {{ form.dispensing_cleanliness }}
+            </div>
+            <div class="mb-3">
+                {{ form.dispensing_environmental.label_tag }} 
+                {{ form.dispensing_environmental }}
+            </div>
+            <div class="mb-3">
+                {{ form.dispensing_calibration.label_tag }} 
+                {{ form.dispensing_calibration }}
+            </div>
+            <div class="mb-3">
+                {{ form.dispensing_supervise.label_tag }} 
+                {{ form.dispensing_supervise }}
+            </div>
+            <div class="mb-3">
+                {{ form.dispensing_released_rm.label_tag }} 
+                {{ form.dispensing_released_rm }}
+            </div>
+            <div class="mb-3">
+                {{ form.dispensing_status_board.label_tag }} 
+                {{ form.dispensing_status_board }}
+            </div>
+            <div class="mb-3">
+                {{ form.dispensing_bmr_online.label_tag }} 
+                {{ form.dispensing_bmr_online }}
+            </div>
+            <div class="mb-3">
+                {{ form.dispensing_logbooks.label_tag }} 
+                {{ form.dispensing_logbooks }}
+            </div>
+            <div class="mb-3">
+                {{ form.dispensing_report.label_tag }} 
+                {{ form.dispensing_report }}
+            </div>
+        </div>
+
+         <!-- CLEAN ROOM Section -->
+         <div id="cleanroom-section" class="d-none">
+            <h3>CLEAN ROOM</h3>
+            <div class="mb-3">
+                {{ form.cleanroom_cleanliness.label_tag }} 
+                {{ form.cleanroom_cleanliness }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_status_board.label_tag }} 
+                {{ form.cleanroom_status_board }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_gowning.label_tag }} 
+                {{ form.cleanroom_gowning }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_bmr_online.label_tag }} 
+                {{ form.cleanroom_bmr_online }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_logbooks.label_tag }} 
+                {{ form.cleanroom_logbooks }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_footwear.label_tag }} 
+                {{ form.cleanroom_footwear }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_filter.label_tag }} 
+                {{ form.cleanroom_filter }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_cip.label_tag }} 
+                {{ form.cleanroom_cip }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_bulk.label_tag }} 
+                {{ form.cleanroom_bulk }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_bottle_batch.label_tag }} 
+                {{ form.cleanroom_bottle_batch }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_bioburden.label_tag }} 
+                {{ form.cleanroom_bioburden }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_line_clearance.label_tag }} 
+                {{ form.cleanroom_line_clearance }}
+            </div>
+            <div class="mb-3">
+                {{ form.cleanroom_report.label_tag }} 
+                {{ form.cleanroom_report }}
+            </div>
+        </div>
+
+        <!-- STERILIZATION Section -->
+        <div id="sterilization-section" class="d-none">
+            <h3>STERILIZATION</h3>
+            <div class="mb-3">
+                {{ form.sterilization_cleanliness.label_tag }} 
+                {{ form.sterilization_cleanliness }}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_line_clearance.label_tag }} 
+                {{ form.sterilization_line_clearance }}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_status_board.label_tag }} 
+                {{ form.sterilization_status_board }}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_calibration.label_tag }} 
+                {{ form.sterilization_calibration}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_bmr_online.label_tag }} 
+                {{ form.sterilization_bmr_online}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_logbooks.label_tag }} 
+                {{ form.sterilization_logbooks}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_verify_rejections.label_tag }} 
+                {{ form.sterilization_verify_rejections}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_bottle_batch.label_tag }} 
+                {{ form.sterilization_bottle_batch}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_volume.label_tag }} 
+                {{ form.sterilization_volume}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_bioburden.label_tag }} 
+                {{ form.sterilization_bioburden}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_leak_testing.label_tag }} 
+                {{ form.sterilization_leak_testing}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_finished.label_tag }} 
+                {{ form.sterilization_finished}}
+            </div>
+            <div class="mb-3">
+                {{ form.sterilization_report.label_tag }}
+                {{ form.sterilization_report }}
+            </div>
+        </div>
+        
+        <!-- PACKING Section -->
+        <div id="packing-section" class="d-none">
+            <h3>PACKING</h3>
+            <div class="mb-3">
+                {{ form.packing_cleanliness.label_tag }} 
+                {{ form.packing_cleanliness }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_calibration.label_tag }} 
+                {{ form.packing_calibration }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_material_received.label_tag }} 
+                {{ form.packing_material_received }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_line_clearance.label_tag }} 
+                {{ form.packing_line_clearance }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_status_board.label_tag }} 
+                {{ form.packing_status_board }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_bmr_online.label_tag }} 
+                {{ form.packing_bmr_online  }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_leak_testing.label_tag }} 
+                {{ form.packing_leak_testing  }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_visual.label_tag }} 
+                {{ form.packing_visual  }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_bottle_batch.label_tag }} 
+                {{ form.packing_bottle_batch  }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_batch_details.label_tag }} 
+                {{ form.packing_batch_details  }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_batch_quality.label_tag }} 
+                {{ form.packing_quality  }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_batch_labels.label_tag }} 
+                {{ form.packing_labels  }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_batch_weight_limits.label_tag }} 
+                {{ form.packing_weight_limits }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_batch_retention.label_tag }} 
+                {{ form.packing_retention }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_batch_logbooks.label_tag }} 
+                {{ form.packing_logbooks }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_verify_rejections.label_tag }} 
+                {{ form.packing_verify_rejections }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_status_labels.label_tag }} 
+                {{ form.packing_status_labels }}
+            </div>
+            <div class="mb-3">
+                {{ form.packing_report.label_tag }}
+                {{ form.packing_report }}
+            </div>
+        </div>
+        
+        <!-- PERIODIC DUTIES Section (always visible) -->
+        <div id="periodic-section">
+            <h3>PERIODIC DUTIES</h3>
+            <div class="mb-3">
+                {{ form.periodic_trainings.label_tag }} 
+                {{ form.periodic_trainings }}
+            </div>
+            <div class="mb-3">
+                {{ form.periodic_investigations.label_tag }} 
+                {{ form.periodic_investigations }}
+            </div>
+            <div class="mb-3">
+                {{ form.periodic_equipment_tags.label_tag }} 
+                {{ form.periodic_equipment_tags }}
+            </div>
+            <div class="mb-3">
+                {{ form.periodic_validation.label_tag }} 
+                {{ form.periodic_validation }}
+            </div>
+            <div class="mb-3">
+                {{ form.periodic_calibration.label_tag }} 
+                {{ form.periodic_calibration }}
+            </div>
+            <div class="mb-3">
+                {{ form.periodic_colour_coding.label_tag }} 
+                {{ form.periodic_colour_coding }}
+            </div>
+            <div class="mb-3">
+                {{ form.periodic_lighting.label_tag }} 
+                {{ form.periodic_lighting }}
+            </div>
+            <div class="mb-3">
+                {{ form.periodic_cleanroom_qual.label_tag }} 
+                {{ form.periodic_cleanroom_qual }}
+            </div>
+            <div class="mb-3">
+                {{ form.periodic_report.label_tag }}
+                {{ form.periodic_report }}
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script>
+      // JavaScript to show/hide sections based on selections
+      document.addEventListener("DOMContentLoaded", function() {
+          // Grab all the checkboxes in the sections_supervised field
+          const sectionCheckboxes = document.querySelectorAll("input[name='sections_supervised']");
+          
+          function toggleSections() {
+              // Determine the selected values
+              const selectedSections = Array.from(sectionCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+              
+              // List of section IDs corresponding to choices.
+              // Ensure the values in this mapping match the ones in SECTION_CHOICES:
+              const mapping = {
+                  "STORES": "stores-section",
+                  "WTP": "wtp-section",         
+                  "DISPENSING": "dispensing-section",
+                  "CLEAN_ROOM": "cleanroom-section",
+                  "STERILIZATION": "sterilization-section",
+                  "PACKING": "packing-section"
+              };
+              
+              // Hide all sections (except for the always-visible periodic section)
+              Object.values(mapping).forEach(sectionId => {
+                  const sectionDiv = document.getElementById(sectionId);
+                  if (sectionDiv) {
+                      sectionDiv.classList.add('d-none');
+                  }
+              });
+              
+              // Show only the ones selected
+              selectedSections.forEach(function(section) {
+                  const sectionId = mapping[section];
+                  if (sectionId) {
+                      const sectionDiv = document.getElementById(sectionId);
+                      if (sectionDiv) {
+                          sectionDiv.classList.remove('d-none');
+                      }
+                  }
+              });
+          }
+          
+          // Bind the change event to each checkbox
+          sectionCheckboxes.forEach(checkbox => {
+              checkbox.addEventListener("change", toggleSections);
+          });
+          
+          // Call initially to set proper visibility if the form is pre-populated.
+          toggleSections();
+      });
+    </script>
+</body>
+</html>
