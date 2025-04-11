@@ -37,6 +37,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'ipqa_lsw',
+    'django_bootstrap5',
+    'allauth',
+    'django_summernote',
+    "crispy_forms",
+    "debug_toolbar",
+    "corsheaders",
+    "storages",
+    "widget_tweaks",
+    "rest_framework",
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "lsw_apdl.urls"

@@ -42,6 +42,10 @@
         <!-- STORES Section (wrapped in a div for toggling) -->
         <div id="stores-section" class="d-none">
             <h3>STORES</h3>
+            <!-- Tick All Checkbox -->
+            <label>
+                {{ form.tick_all_stores }} <strong>{{ form.tick_all_stores.label }}</strong>
+              </label><br><br>
             <div class="mb-3">
                 {{ form.stores_cleanliness.label_tag }} 
                 {{ form.stores_cleanliness }}
@@ -111,25 +115,29 @@
         <!-- WATER TREATMENT PLANT Section -->
         <div id="wtp-section" class="d-none">
             <h3>Water Treatment Plant</h3>
+            <!-- Tick All Checkbox -->
+            <label>
+                {{ form.tick_all_wtp }} <strong>{{ form.tick_all_wtp.label }}</strong>
+              </label><br><br>
             <div class="mb-3">
                 {{ form.wtp_cleanliness.label_tag }} 
                 {{ form.wtp_cleanliness }}
             </div>
             <div class="mb-3">
-                {{ form.wtp_verify ro water generation report.label_tag }} 
-                {{ form.wtp_verify ro water generation report }}
+                {{ form.wtp_verify_ro_water_generation_report.label_tag }} 
+                {{ form.wtp_verify_ro_water_generation_report }}
             </div>
             <div class="mb-3">
-                {{ form.wtp_verify wfi system report.label_tag }} 
-                {{ form.wtp_verify wfi system report }}
+                {{ form.wtp_verify_wfi_system_report.label_tag }} 
+                {{ form.wtp_verify_wfi_system_report }}
             </div>
             <div class="mb-3">
-                {{ form.wtp_verify rowd report.label_tag }} 
-                {{ form.wtp_verify rowd report }}
+                {{ form.wtp_verify_rowd_report.label_tag }} 
+                {{ form.wtp_verify_rowd_report }}
             </div>
             <div class="mb-3">
-                {{ form.wtp_verification of logbooks.label_tag }} 
-                {{ form.wtp_verification of logbooks }}
+                {{ form.wtp_verification_of_logbooks.label_tag }} 
+                {{ form.wtp_verification_of_logbooks }}
             </div>
             <div class="mb-3">
                 {{ form.wtp_report.label_tag }}
@@ -140,6 +148,10 @@
         <!-- DISPENSING Section -->
         <div id="dispensing-section" class="d-none">
             <h3>DISPENSING</h3>
+            <!-- Tick All Checkbox -->
+            <label>
+                {{ form.tick_all_dispensing }} <strong>{{ form.tick_all_dispensing.label }}</strong>
+              </label><br><br>
             <div class="mb-3">
                 {{ form.dispensing_cleanliness.label_tag }} 
                 {{ form.dispensing_cleanliness }}
@@ -181,6 +193,10 @@
          <!-- CLEAN ROOM Section -->
          <div id="cleanroom-section" class="d-none">
             <h3>CLEAN ROOM</h3>
+            <!-- Tick All Checkbox -->
+            <label>
+                {{ form.tick_all_cleanroom }} <strong>{{ form.tick_all_cleanroom.label }}</strong>
+              </label><br><br>
             <div class="mb-3">
                 {{ form.cleanroom_cleanliness.label_tag }} 
                 {{ form.cleanroom_cleanliness }}
@@ -238,6 +254,10 @@
         <!-- STERILIZATION Section -->
         <div id="sterilization-section" class="d-none">
             <h3>STERILIZATION</h3>
+            <!-- Tick All Checkbox -->
+            <label>
+                {{ form.tick_all_sterilization }} <strong>{{ form.tick_all_sterilization.label }}</strong>
+              </label><br><br>
             <div class="mb-3">
                 {{ form.sterilization_cleanliness.label_tag }} 
                 {{ form.sterilization_cleanliness }}
@@ -295,6 +315,10 @@
         <!-- PACKING Section -->
         <div id="packing-section" class="d-none">
             <h3>PACKING</h3>
+            <!-- Tick All Checkbox -->
+            <label>
+                {{ form.tick_all_packing }} <strong>{{ form.tick_all_packing.label }}</strong>
+              </label><br><br>
             <div class="mb-3">
                 {{ form.packing_cleanliness.label_tag }} 
                 {{ form.packing_cleanliness }}
@@ -372,6 +396,10 @@
         <!-- PERIODIC DUTIES Section (always visible) -->
         <div id="periodic-section">
             <h3>PERIODIC DUTIES</h3>
+            <!-- Tick All Checkbox -->
+            <label>
+              {{ form.tick_all_periodic }} <strong>{{ form.tick_all_periodic.label }}</strong>
+            </label><br><br>
             <div class="mb-3">
                 {{ form.periodic_trainings.label_tag }} 
                 {{ form.periodic_trainings }}

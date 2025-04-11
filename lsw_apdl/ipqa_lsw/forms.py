@@ -22,8 +22,11 @@ SECTION_CHOICES = [
 class LeaderStandardWorkForm(forms.Form):
     # -- General Information --
     name = forms.CharField(label="NAME *", max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    shift = forms.ChoiceField(label="SHIFT *", choices=SHIFT_CHOICES, required=True, widget=forms.RadioSelect)
-    date = forms.DateFieldWidget(label="DATE *", required=True)
+    shift = forms.ChoiceField(label="SHIFT *", choices=SHIFT_CHOICES, required=True,  widget=forms.CheckboxSelectMultiple)
+    date = forms.DateField(
+        label="DATE *", required=True,
+        widget=forms.DateInput(attrs={'type': 'date'})
+    )
     sections_supervised = forms.MultipleChoiceField(
         label="SECTION(S) SUPERVISED *",
         choices=SECTION_CHOICES, required=True,
@@ -31,6 +34,7 @@ class LeaderStandardWorkForm(forms.Form):
     )
 
     # -- STORES Section --
+    tick_all_stores = forms.BooleanField(label="Tick All Stores Checks", required=False)
     stores_cleanliness = forms.BooleanField(label="Cleanliness of Area", required=False)
     stores_environmental = forms.BooleanField(label="Environmental Monitoring", required=False)
     stores_line_clearance = forms.BooleanField(label="Verify Proper Line Clearance", required=False)
@@ -53,11 +57,12 @@ class LeaderStandardWorkForm(forms.Form):
     )
 
     # -- Water Treatment Plant Section --
+    tick_all_wtp = forms.BooleanField(label="Tick All WTP Checks", required=False)
     wtp_cleanliness = forms.BooleanField(label="Cleanliness of Area", required=False)
-    wtp_verify ro water generation report = forms.BooleanField(label="Verify RO Water Generation Report", required=False)
-    wtp_verify wfi system report = forms.BooleanField(label="Verify WFI System Report", required=False)
-    wtp_verify rowd report = forms.BooleanField(label="Verify ROWD Report", required=False)
-    wtp_verification of logbooks = forms.BooleanField(label="Verification of Logbooks", required=False)
+    wtp_verify_ro_water_generation_report = forms.BooleanField(label="Verify RO Water Generation Report", required=False)
+    wtp_verify_wfi_system_report = forms.BooleanField(label="Verify WFI System Report", required=False)
+    wtp_verify_rowd_report = forms.BooleanField(label="Verify ROWD Report", required=False)
+    wtp_verification_of_logbooks = forms.BooleanField(label="Verification of Logbooks", required=False)
     wtp_report = forms.CharField(
         label="Water Treatment Plant Report/Escalation: Write any reports or escalations and include actions taken in brackets",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
@@ -65,6 +70,7 @@ class LeaderStandardWorkForm(forms.Form):
     )
 
     # -- Dispensing Section --
+    tick_all_dispensing = forms.BooleanField(label="Tick All Dispensing Checks", required=False)
     dispensing_cleanliness = forms.BooleanField(label="Cleanliness of Area", required=False)
     dispensing_environmental = forms.BooleanField(label="Environmental Monitoring", required=False)
     dispensing_calibration = forms.BooleanField(label="Verify Calibration of Balances", required=False)
@@ -80,6 +86,7 @@ class LeaderStandardWorkForm(forms.Form):
     )
 
     # -- Clean Room Section --
+    tick_all_cleanroom = forms.BooleanField(label="Tick All Clean Room Checks", required=False)
     cleanroom_cleanliness = forms.BooleanField(label="Cleanliness of Area", required=False)
     cleanroom_status_board = forms.BooleanField(label="Status Board Update", required=False)
     cleanroom_gowning = forms.BooleanField(label="Check Proper Gowning", required=False)
@@ -99,6 +106,7 @@ class LeaderStandardWorkForm(forms.Form):
     )
 
     # -- Sterilization Section --
+    tick_all_sterilization = forms.BooleanField(label="Tick All Sterilization Checks", required=False)
     sterilization_cleanliness = forms.BooleanField(label="Cleanliness of Area", required=False)
     sterilization_line_clearance = forms.BooleanField(label="Verify Proper Line Clearance", required=False)
     sterilization_status_board = forms.BooleanField(label="Status Board Update", required=False)
@@ -118,6 +126,7 @@ class LeaderStandardWorkForm(forms.Form):
     )
 
     # -- Packing Section --
+    tick_all_packing= forms.BooleanField(label="Tick All Packing Checks", required=False)
     packing_cleanliness = forms.BooleanField(label="Cleanliness of Area", required=False)
     packing_calibration = forms.BooleanField(label="Verify Calibration of Balances", required=False)
     packing_material_received = forms.BooleanField(label="Check Material Received (PM)", required=False)
@@ -127,10 +136,6 @@ class LeaderStandardWorkForm(forms.Form):
     packing_leak_testing = forms.BooleanField(label="Verify Leak Testing Status", required=False)
     packing_visual = forms.BooleanField(label="Verify Proper Visual Inspection Done", required=False)
     packing_bottle_batch = forms.BooleanField(label="Check Bottle Batch Coding", required=False)
-    packing_<div class="mb-3">
-                {{ form.packing_bottle_batch.label_tag }} 
-                {{ form.packing_bottle_batch  }}
-            </div> = forms.BooleanField(label="Verify Batch Details Printed on Label", required=False)
     packing_quality = forms.BooleanField(label="Check Quality of BOPP Wrapping", required=False)
     packing_labels = forms.BooleanField(label="Check Labels Pasted on C. Boxes", required=False)
     packing_weight_limits = forms.BooleanField(label="Provide Weight Limits", required=False)
@@ -145,6 +150,7 @@ class LeaderStandardWorkForm(forms.Form):
     )
 
     # -- Periodic Duties Section --
+    tick_all_periodic = forms.BooleanField(label="Tick All Periodic Checks", required=False)
     periodic_trainings = forms.BooleanField(label="Trainings", required=False)
     periodic_investigations = forms.BooleanField(label="Investigations", required=False)
     periodic_equipment_tags = forms.BooleanField(label="Check Equipment Tags", required=False)

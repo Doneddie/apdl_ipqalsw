@@ -11,11 +11,11 @@ def leader_standard_work_view(request):
         form = LeaderStandardWorkForm(request.POST)
         if form.is_valid():
             # Create the PDF content from an HTML template.
-            pdf_data = render_to_pdf('pdf_template.html', {'data': form.cleaned_data})
+            pdf_data = render_to_pdf('ipqa_lsw/pdf_template.html', {'data': form.cleaned_data})
             
             if not pdf_data:
                 # Optionally handle PDF generation errors.
-                return render(request, 'error.html', {'message': 'Error generating PDF.'})
+                return render(request, 'ipqa_lsw/error.html', {'message': 'Error generating PDF.'})
             
             subject = "IPQA Leader Standard Work Submission"
             from_email = settings.DEFAULT_FROM_EMAIL  # Ensure you have this set in settings.py
@@ -26,8 +26,8 @@ def leader_standard_work_view(request):
             email.attach('submission.pdf', pdf_data, 'application/pdf')
             email.send()
             
-            return render(request, 'thank_you.html', {'data': form.cleaned_data})
+            return render(request, 'ipqa_lsw/thank_you.html', {'data': form.cleaned_data})
     else:
         form = LeaderStandardWorkForm()
-    return render(request, 'leader_standard_work_form.html', {'form': form})
+    return render(request, 'ipqa_lsw/leader_standard_work_form.html', {'form': form})
 
