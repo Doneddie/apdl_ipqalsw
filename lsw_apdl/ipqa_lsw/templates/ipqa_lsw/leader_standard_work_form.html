@@ -106,10 +106,25 @@
                 {{ form.stores_aql_checks.label_tag }} 
                 {{ form.stores_aql_checks }}
             </div>
-            <div class="mb-3">
-                {{ form.stores_report.label_tag }}
-                {{ form.stores_report }}
-            </div>
+            <!-- Table for Reports and Actions Taken -->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Reports/Escalations</th>
+                        <th>Actions Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea class="form-control" name="stores_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
+                        </td>
+                        <td>
+                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- WATER TREATMENT PLANT Section -->
@@ -139,10 +154,25 @@
                 {{ form.wtp_verification_of_logbooks.label_tag }} 
                 {{ form.wtp_verification_of_logbooks }}
             </div>
-            <div class="mb-3">
-                {{ form.wtp_report.label_tag }}
-                {{ form.wtp_report }}
-            </div>
+            <!-- Table for Reports and Actions Taken -->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Reports/Escalations</th>
+                        <th>Actions Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea class="form-control" name="wtp_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
+                        </td>
+                        <td>
+                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- DISPENSING Section -->
@@ -184,10 +214,25 @@
                 {{ form.dispensing_logbooks.label_tag }} 
                 {{ form.dispensing_logbooks }}
             </div>
-            <div class="mb-3">
-                {{ form.dispensing_report.label_tag }} 
-                {{ form.dispensing_report }}
-            </div>
+            <!-- Table for Reports and Actions Taken -->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Reports/Escalations</th>
+                        <th>Actions Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea class="form-control" name="dispensing_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
+                        </td>
+                        <td>
+                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
          <!-- CLEAN ROOM Section -->
@@ -245,10 +290,25 @@
                 {{ form.cleanroom_line_clearance.label_tag }} 
                 {{ form.cleanroom_line_clearance }}
             </div>
-            <div class="mb-3">
-                {{ form.cleanroom_report.label_tag }} 
-                {{ form.cleanroom_report }}
-            </div>
+            <!-- Table for Reports and Actions Taken -->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Reports/Escalations</th>
+                        <th>Actions Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea class="form-control" name="cleanroom_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
+                        </td>
+                        <td>
+                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- STERILIZATION Section -->
@@ -306,10 +366,25 @@
                 {{ form.sterilization_finished.label_tag }} 
                 {{ form.sterilization_finished}}
             </div>
-            <div class="mb-3">
-                {{ form.sterilization_report.label_tag }}
-                {{ form.sterilization_report }}
-            </div>
+            <!-- Table for Reports and Actions Taken -->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Reports/Escalations</th>
+                        <th>Actions Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea class="form-control" name="sterilization_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
+                        </td>
+                        <td>
+                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
         <!-- PACKING Section -->
@@ -356,27 +431,23 @@
                 {{ form.packing_bottle_batch  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_batch_details.label_tag }} 
-                {{ form.packing_batch_details  }}
-            </div>
-            <div class="mb-3">
-                {{ form.packing_batch_quality.label_tag }} 
+                {{ form.packing_quality.label_tag }} 
                 {{ form.packing_quality  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_batch_labels.label_tag }} 
+                {{ form.packing_labels.label_tag }} 
                 {{ form.packing_labels  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_batch_weight_limits.label_tag }} 
+                {{ form.packing_weight_limits.label_tag }} 
                 {{ form.packing_weight_limits }}
             </div>
             <div class="mb-3">
-                {{ form.packing_batch_retention.label_tag }} 
+                {{ form.packing_retention.label_tag }} 
                 {{ form.packing_retention }}
             </div>
             <div class="mb-3">
-                {{ form.packing_batch_logbooks.label_tag }} 
+                {{ form.packing_logbooks.label_tag }} 
                 {{ form.packing_logbooks }}
             </div>
             <div class="mb-3">
@@ -387,10 +458,25 @@
                 {{ form.packing_status_labels.label_tag }} 
                 {{ form.packing_status_labels }}
             </div>
-            <div class="mb-3">
-                {{ form.packing_report.label_tag }}
-                {{ form.packing_report }}
-            </div>
+            <!-- Table for Reports and Actions Taken -->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Reports/Escalations</th>
+                        <th>Actions Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea class="form-control" name="packing_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
+                        </td>
+                        <td>
+                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
         <!-- PERIODIC DUTIES Section (always visible) -->
@@ -432,10 +518,25 @@
                 {{ form.periodic_cleanroom_qual.label_tag }} 
                 {{ form.periodic_cleanroom_qual }}
             </div>
-            <div class="mb-3">
-                {{ form.periodic_report.label_tag }}
-                {{ form.periodic_report }}
-            </div>
+            <!-- Table for Reports and Actions Taken -->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Reports/Escalations</th>
+                        <th>Actions Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea class="form-control" name="periodic_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
+                        </td>
+                        <td>
+                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -493,5 +594,31 @@
           toggleSections();
       });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // List of all "Tick All" checkboxes and corresponding sections
+            const sections = [
+                { tickAllId: 'tick_all_stores', sectionId: 'stores-section' },
+                { tickAllId: 'tick_all_wtp', sectionId: 'wtp-section' },
+                { tickAllId: 'tick_all_dispensing', sectionId: 'dispensing-section' },
+                { tickAllId: 'tick_all_cleanroom', sectionId: 'cleanroom-section' },
+                { tickAllId: 'tick_all_sterilization', sectionId: 'sterilization-section' },
+                { tickAllId: 'tick_all_packing', sectionId: 'packing-section' },
+                { tickAllId: 'tick_all_periodic', sectionId: 'periodic-section' },
+            ];
+        
+            // Loop through each section to add event listeners
+            sections.forEach(section => {
+                const tickAll = document.querySelector(`input[name="${section.tickAllId}"]`);
+                const checkboxes = document.querySelectorAll(`#${section.sectionId} input[type="checkbox"]`);
+                
+                if (tickAll) {
+                    tickAll.addEventListener('change', function () {
+                        checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                    });
+                }
+            });
+        });
+        </script>        
 </body>
 </html>

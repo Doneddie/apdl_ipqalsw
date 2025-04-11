@@ -19,7 +19,7 @@ def leader_standard_work_view(request):
             
             subject = "IPQA Leader Standard Work Submission"
             from_email = settings.DEFAULT_FROM_EMAIL  # Ensure you have this set in settings.py
-            recipient_list = ['apdlug.IPQA@abacuspharma.com']  # My actual email
+            recipient_list = ['apdlug.ipqa@gmail.com']  # My actual email
             
             # Create an EmailMessage object.
             email = EmailMessage(subject, "Please see the attached submission PDF.", from_email, recipient_list)

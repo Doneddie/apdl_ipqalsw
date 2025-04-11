@@ -1,0 +1,119 @@
+/* Base colors */
+:root {
+    --cyan: #00bcd4; /* Cyan */
+    --white: #ffffff; /* White */
+    --black: #000000; /* Black */
+}
+
+/* Body and General Layout */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Header Style */
+h2 {
+    text-align: center;
+    color: var(--cyan);
+    margin-bottom: 30px;
+}
+
+/* Table Style */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: var(--cyan);
+    color: var(--white);
+}
+
+table td {
+    background-color: #f9f9f9;
+}
+
+/* Form Control Style */
+textarea.form-control {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: var(--cyan);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    margin: 30px auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #008C8C; /* Darker cyan */
+}
+
+/* Styling for Tick Boxes */
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Slightly increase the size */
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.checkbox-group label {
+    margin-right: 15px;
+    font-size: 14px;
+    color: var(--black);
+}
+
+/* Tick all checkbox should be aligned in a row */
+.checkbox-group label input[type="checkbox"] {
+    margin-right: 5px; /* Small gap between label and checkbox */
+}
+
+/* Section Title Styling */
+h3 {
+    color: var(--cyan);
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Adjusting layout for smaller screens */
+@media (max-width: 768px) {
+    .checkbox-group {
+        flex-direction: column; /* Stack checkboxes vertically on small screens */
+    }
+
+    table {
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        width: auto;
+    }
+}

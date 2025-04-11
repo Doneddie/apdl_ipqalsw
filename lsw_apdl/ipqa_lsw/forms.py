@@ -51,7 +51,12 @@ class LeaderStandardWorkForm(forms.Form):
     stores_batches_received = forms.BooleanField(label="Verify Batches Received from Packing", required=False)
     stores_aql_checks = forms.BooleanField(label="AQL Checks on Batches Sold", required=False)
     stores_report = forms.CharField(
-        label="STORES Report/Escalation: Write any reports or escalations and include actions taken in brackets",
+        label="STORES Report/Escalation: Write any reports or escalations",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        required=False
+    )
+    actions_taken = forms.CharField(
+        label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
@@ -64,7 +69,12 @@ class LeaderStandardWorkForm(forms.Form):
     wtp_verify_rowd_report = forms.BooleanField(label="Verify ROWD Report", required=False)
     wtp_verification_of_logbooks = forms.BooleanField(label="Verification of Logbooks", required=False)
     wtp_report = forms.CharField(
-        label="Water Treatment Plant Report/Escalation: Write any reports or escalations and include actions taken in brackets",
+        label="Water Treatment Plant Report/Escalation: Write any reports or escalations",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        required=False
+    )
+    actions_taken = forms.CharField(
+        label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
@@ -80,7 +90,12 @@ class LeaderStandardWorkForm(forms.Form):
     dispensing_bmr_online = forms.BooleanField(label="BMR Online Filling", required=False)
     dispensing_logbooks = forms.BooleanField(label="Verification of Logbooks", required=False)
     dispensing_report = forms.CharField(
-        label="DISPENSING Report/Escalation: Write any reports or escalations and include actions taken in brackets",
+        label="DISPENSING Report/Escalation: Write any reports or escalations",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        required=False
+    )
+    actions_taken = forms.CharField(
+        label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
@@ -100,7 +115,12 @@ class LeaderStandardWorkForm(forms.Form):
     cleanroom_bioburden = forms.BooleanField(label="Sample BioBurden for E/E/N", required=False)
     cleanroom_line_clearance = forms.BooleanField(label="Verify Proper Line Clearance", required=False)
     cleanroom_report = forms.CharField(
-        label="CLEAN ROOM Report/Escalation: Write any reports or escalations and include actions taken in brackets",
+        label="CLEAN ROOM Report/Escalation: Write any reports or escalations",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        required=False
+    )
+    actions_taken = forms.CharField(
+        label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
@@ -120,7 +140,12 @@ class LeaderStandardWorkForm(forms.Form):
     sterilization_leak_testing = forms.BooleanField(label="Verify Leak Testing Status", required=False)
     sterilization_finished = forms.BooleanField(label="Sample Finished Products", required=False)
     sterilization_report = forms.CharField(
-        label="STERILIZATION Report/Escalation: Write any reports or escalations and include actions taken in brackets",
+        label="STERILIZATION Report/Escalation: Write any reports or escalations",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        required=False
+    )
+    actions_taken = forms.CharField(
+        label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
@@ -144,7 +169,12 @@ class LeaderStandardWorkForm(forms.Form):
     packing_verify_rejections = forms.BooleanField(label="Check / Verify Rejections", required=False)
     packing_status_labels = forms.BooleanField(label="Check for Status Labels", required=False)
     packing_report = forms.CharField(
-        label="PACKING Report/Escalation: Write any reports or escalations and include actions taken in brackets",
+        label="PACKING Report/Escalation: Write any reports or escalations",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        required=False
+    )
+    actions_taken = forms.CharField(
+        label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
@@ -160,7 +190,12 @@ class LeaderStandardWorkForm(forms.Form):
     periodic_lighting = forms.BooleanField(label="Check Lighting in Visual Inspection Booth", required=False)
     periodic_cleanroom_qual = forms.BooleanField(label="Cleanroom Personnel Qualification", required=False)
     periodic_report = forms.CharField(
-        label="PERIODIC DUTIES Report/Escalation: Write any reports or escalations and include actions taken in brackets",
+        label="PERIODIC DUTIES Report/Escalation: Write any reports or escalations",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        required=False
+    )
+    actions_taken = forms.CharField(
+        label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
