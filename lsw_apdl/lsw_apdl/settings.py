@@ -12,9 +12,13 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import environ
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 env = environ.Env()
 environ.Env.read_env()  # Reads the .env file
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,8 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-rr87*7gi=!rgvo=^oa893bisk0!zs!1p8c^(c7@*qx8w7o*tgl"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "your-default-dev-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -52,7 +57,7 @@ INSTALLED_APPS = [
     "widget_tweaks",
     "rest_framework",
     'crispy_bootstrap5',
-    'django-environ',
+    'environ',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +132,8 @@ DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -150,4 +157,3 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 print(env('EMAIL_HOST'))  # Should print 'smtp.gmail.com' if the .env file is read correctly.
-

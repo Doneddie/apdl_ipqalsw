@@ -21,11 +21,11 @@ SECTION_CHOICES = [
 
 class LeaderStandardWorkForm(forms.Form):
     # -- General Information --
-    name = forms.CharField(label="NAME *", max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    name = forms.CharField(label="NAME *", max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control', 'autocomplete': 'name' }))
     shift = forms.ChoiceField(label="SHIFT *", choices=SHIFT_CHOICES, required=True,  widget=forms.CheckboxSelectMultiple)
     date = forms.DateField(
         label="DATE *", required=True,
-        widget=forms.DateInput(attrs={'type': 'date'})
+        widget=forms.DateInput(attrs={'type': 'date', 'autocomplete': 'date'})
     )
     sections_supervised = forms.MultipleChoiceField(
         label="SECTION(S) SUPERVISED *",
@@ -55,7 +55,7 @@ class LeaderStandardWorkForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
-    actions_taken = forms.CharField(
+    stores_actions_taken = forms.CharField(
         label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
@@ -73,7 +73,7 @@ class LeaderStandardWorkForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
-    actions_taken = forms.CharField(
+    wtp_actions_taken = forms.CharField(
         label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
@@ -94,7 +94,7 @@ class LeaderStandardWorkForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
-    actions_taken = forms.CharField(
+    dispensing_actions_taken = forms.CharField(
         label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
@@ -119,7 +119,7 @@ class LeaderStandardWorkForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
-    actions_taken = forms.CharField(
+    cleanroom_actions_taken = forms.CharField(
         label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
@@ -144,7 +144,7 @@ class LeaderStandardWorkForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
-    actions_taken = forms.CharField(
+    sterilization_actions_taken = forms.CharField(
         label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
@@ -173,7 +173,7 @@ class LeaderStandardWorkForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
-    actions_taken = forms.CharField(
+    packing_actions_taken = forms.CharField(
         label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
@@ -194,7 +194,7 @@ class LeaderStandardWorkForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False
     )
-    actions_taken = forms.CharField(
+    periodic_actions_taken = forms.CharField(
         label="Actions Taken: Describe the actions taken",
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         required=False

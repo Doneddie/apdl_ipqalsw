@@ -23,87 +23,135 @@
         <!-- General Information -->
         <h3>General Information</h3>
         <div class="mb-3">
-            {{ form.name.label_tag }}
+            <label for="{{ form.name.id_for_label }}" class="form-label">
+                {{ form.name.label }}
+            </label>
             {{ form.name }}
         </div>
         <div class="mb-3">
-            {{ form.shift.label_tag }}
-            {{ form.shift }}
+            <legend class="form-label">{{ form.shift.label }}</legend>
+            {% for checkbox in form.shift %}
+            <div class="form-check">
+                {{ checkbox.tag }}
+                <label class="form-check-label" for="{{ checkbox.id_for_label }}">
+                    {{ checkbox.choice_label }}
+                </label>
+            </div>
+            {% endfor %}
         </div>
         <div class="mb-3">
-            {{ form.date.label_tag }}
+            <label for="{{ form.date.id_for_label }}" class="form-label">
+                {{ form.date.label }}
+            </label>
             {{ form.date }}
         </div>
-        <div class="mb-3">
-            {{ form.sections_supervised.label_tag }}
-            {{ form.sections_supervised }}
+        {% for checkbox in form.sections_supervised %}
+        <div class="form-check">
+            {{ checkbox.tag }}
+            <label class="form-check-label" for="{{ checkbox.id_for_label }}">
+                {{ checkbox.choice_label }}
+            </label>
         </div>
+        {% endfor %}
         
         <!-- STORES Section (wrapped in a div for toggling) -->
         <div id="stores-section" class="d-none">
             <h3>STORES</h3>
             <!-- Tick All Checkbox -->
-            <label>
-                {{ form.tick_all_stores }} <strong>{{ form.tick_all_stores.label }}</strong>
-              </label><br><br>
+            <div class="form-check">
+                {{ form.tick_all_stores }}
+                <label class="form-check-label" for="{{ form.tick_all_stores.id_for_label }}">
+                    <strong>{{ form.tick_all_stores.label }}</strong>
+                </label>
+            </div><br><br>
             <div class="mb-3">
-                {{ form.stores_cleanliness.label_tag }} 
+                <label for="{{ form.stores_cleanliness.id_for_label }}" class="form-label">
+                    {{ form.stores_cleanliness.label_tag }}
+                </label> 
                 {{ form.stores_cleanliness }}
             </div>
             <div class="mb-3">
-                {{ form.stores_environmental.label_tag }} 
+                <label for="{{ form.stores_environmental.id_for_label }}" class="form-label">
+                    {{ form.stores_environmental.label_tag }} 
+                </label>
                 {{ form.stores_environmental }}
             </div>
             <div class="mb-3">
-                {{ form.stores_line_clearance.label_tag }} 
+                <label for="{{ form.stores_line_clearance.id_for_label }}" class="form-label">
+                    {{ form.stores_line_clearance.label_tag }} 
+                </label>
                 {{ form.stores_line_clearance }}
             </div>
             <div class="mb-3">
-                {{ form.stores_calibration.label_tag }} 
+                <label for="{{ form.stores_calibration.id_for_label }}" class="form-label">
+                   {{ form.stores_calibration.label_tag }} 
+                </label>
                 {{ form.stores_calibration }}
             </div>
             <div class="mb-3">
-                {{ form.stores_material_received.label_tag }} 
+                <label for="{{ form.stores_material_received.id_for_label }}" class="form-label">
+                    {{ form.stores_material_received.label_tag }}
+                </label> 
                 {{ form.stores_material_received }}
             </div>
             <div class="mb-3">
-                {{ form.stores_supervise_sampling.label_tag }} 
+                <label for="{{ form.stores_supervise_sampling.id_for_label }}" class="form-label">
+                    {{ form.stores_supervise_sampling.label_tag }} 
+                </label>
                 {{ form.stores_supervise_sampling }}
             </div>
             <div class="mb-3">
-                {{ form.stores_material_issued.label_tag }} 
+                <label for="{{ form.stores_material_issued.id_for_label }}" class="form-label">
+                    {{ form.stores_material_issued.label_tag }} 
+                </label>
                 {{ form.stores_material_issued }}
             </div>
             <div class="mb-3">
-                {{ form.stores_released_rm.label_tag }} 
+                <label for="{{ form.stores_released_rm.id_for_label }}" class="form-label">
+                    {{ form.stores_released_rm.label_tag }}
+                </label> 
                 {{ form.stores_released_rm }}
             </div>
             <div class="mb-3">
-                {{ form.stores_status_board.label_tag }} 
+                <label for="{{ form.stores_status_board.id_for_label }}" class="form-label">
+                   {{ form.stores_status_board.label_tag }} 
+                </label>
                 {{ form.stores_status_board }}
             </div>
             <div class="mb-3">
-                {{ form.stores_bmr_online.label_tag }} 
+                <label for="{{ form.stores_bmr_online.id_for_label }}" class="form-label">
+                    {{ form.stores_bmr_online.label_tag }} 
+                </label>
                 {{ form.stores_bmr_online }}
             </div>
             <div class="mb-3">
-                {{ form.stores_logbooks.label_tag }} 
+                <label for="{{ form.stores_logbooks.id_for_label }}" class="form-label">
+                    {{ form.stores_logbooks.label_tag }}
+                </label> 
                 {{ form.stores_logbooks }}
             </div>
             <div class="mb-3">
-                {{ form.stores_verify_rejections.label_tag }} 
+                <label for="{{ form.stores_verify_rejections.id_for_label }}" class="form-label">
+                    {{ form.stores_verify_rejections.label_tag }}
+                </label> 
                 {{ form.stores_verify_rejections }}
             </div>
             <div class="mb-3">
-                {{ form.stores_status_labels.label_tag }} 
+                <label for="{{ form.stores_status_labels.id_for_label }}" class="form-label">
+                    {{ form.stores_status_labels.label_tag }} 
+                </label>
                 {{ form.stores_status_labels }}
             </div>
             <div class="mb-3">
-                {{ form.stores_batches_received.label_tag }} 
+                <label for="{{ form.stores_batches_received.id_for_label }}" class="form-label">
+                    {{ form.stores_batches_received.label_tag }}
+                </label> 
                 {{ form.stores_batches_received }}
             </div>
             <div class="mb-3">
-                {{ form.stores_aql_checks.label_tag }} 
+                <label for="{{ form.stores_aql_checks.id_for_label }}" class="form-label">
+                    {{ form.stores_aql_checks.label_tag }}
+                </label> 
                 {{ form.stores_aql_checks }}
             </div>
             <!-- Table for Reports and Actions Taken -->
@@ -120,7 +168,7 @@
                             <textarea class="form-control" name="stores_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
                         </td>
                         <td>
-                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                           <textarea class="form-control" name="stores_actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -131,27 +179,40 @@
         <div id="wtp-section" class="d-none">
             <h3>Water Treatment Plant</h3>
             <!-- Tick All Checkbox -->
-            <label>
-                {{ form.tick_all_wtp }} <strong>{{ form.tick_all_wtp.label }}</strong>
-              </label><br><br>
+            <div class="form-check">
+                {{ form.tick_all_wtp }}
+                <label class="form-check-label" for="{{ form.tick_all_wtp.id_for_label }}">
+                    <strong>{{ form.tick_all_wtp.label }}</strong>
+                </label>
+            </div><br><br>
             <div class="mb-3">
-                {{ form.wtp_cleanliness.label_tag }} 
+                <label for="{{ form.wtp_cleanliness.id_for_label }}" class="form-label">
+                    {{ form.wtp_cleanliness.label_tag }} 
+                </label>
                 {{ form.wtp_cleanliness }}
             </div>
             <div class="mb-3">
-                {{ form.wtp_verify_ro_water_generation_report.label_tag }} 
+                <label for="{{ form.wtp_verify_ro_water_generation_report.id_for_label }}" class="form-label">
+                    {{ form.wtp_verify_ro_water_generation_report.label_tag }}
+                </label> 
                 {{ form.wtp_verify_ro_water_generation_report }}
             </div>
             <div class="mb-3">
-                {{ form.wtp_verify_wfi_system_report.label_tag }} 
+                <label for="{{ form.wtp_verify_wfi_system_report.id_for_label }}" class="form-label">
+                    {{ form.wtp_verify_wfi_system_report.label_tag }}
+                </label> 
                 {{ form.wtp_verify_wfi_system_report }}
             </div>
             <div class="mb-3">
-                {{ form.wtp_verify_rowd_report.label_tag }} 
+                <label for="{{ form.wtp_verify_rowd_report.id_for_label }}" class="form-label">
+                    {{ form.wtp_verify_rowd_report.label_tag }}
+                </label> 
                 {{ form.wtp_verify_rowd_report }}
             </div>
             <div class="mb-3">
-                {{ form.wtp_verification_of_logbooks.label_tag }} 
+                <label for="{{ form.wtp_verification_of_logbooks.id_for_label }}" class="form-label">
+                    {{ form.wtp_verification_of_logbooks.label_tag }}
+                </label> 
                 {{ form.wtp_verification_of_logbooks }}
             </div>
             <!-- Table for Reports and Actions Taken -->
@@ -168,7 +229,7 @@
                             <textarea class="form-control" name="wtp_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
                         </td>
                         <td>
-                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                           <textarea class="form-control" name="wtp_actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -179,39 +240,58 @@
         <div id="dispensing-section" class="d-none">
             <h3>DISPENSING</h3>
             <!-- Tick All Checkbox -->
-            <label>
-                {{ form.tick_all_dispensing }} <strong>{{ form.tick_all_dispensing.label }}</strong>
-              </label><br><br>
+            <div class="form-check">
+                {{ form.tick_all_dispensing }}
+                <label class="form-check-label" for="{{ form.tick_all_dispensing.id_for_label }}">
+                    <strong>{{ form.tick_all_dispensing.label }}</strong>
+                </label>
+            </div><br><br>
             <div class="mb-3">
-                {{ form.dispensing_cleanliness.label_tag }} 
+                <label for="{{ form.dispensing_cleanliness.id_for_label }}" class="form-label">
+                    {{ form.dispensing_cleanliness.label_tag }}
+                </label> 
                 {{ form.dispensing_cleanliness }}
             </div>
             <div class="mb-3">
-                {{ form.dispensing_environmental.label_tag }} 
+                <label for="{{ form.dispensing_environmental.id_for_label }}" class="form-label">
+                    {{ form.dispensing_environmental.label_tag }}
+                </label> 
                 {{ form.dispensing_environmental }}
             </div>
             <div class="mb-3">
-                {{ form.dispensing_calibration.label_tag }} 
+                <label for="{{ form.dispensing_calibration.id_for_label }}" class="form-label">
+                    {{ form.dispensing_calibration.label_tag }}
+                </label> 
                 {{ form.dispensing_calibration }}
             </div>
             <div class="mb-3">
-                {{ form.dispensing_supervise.label_tag }} 
+                <label for="{{ form.dispensing_supervise.id_for_label }}" class="form-label">
+                    {{ form.dispensing_supervise.label_tag }}
+                </label> 
                 {{ form.dispensing_supervise }}
             </div>
             <div class="mb-3">
-                {{ form.dispensing_released_rm.label_tag }} 
+                <label for="{{ form.dispensing_released_rm.id_for_label }}" class="form-label">
+                    {{ form.dispensing_released_rm.label_tag }}
+                </label> 
                 {{ form.dispensing_released_rm }}
             </div>
             <div class="mb-3">
-                {{ form.dispensing_status_board.label_tag }} 
+                <label for="{{ form.dispensing_status_board.id_for_label }}" class="form-label">
+                    {{ form.dispensing_status_board.label_tag }}
+                </label> 
                 {{ form.dispensing_status_board }}
             </div>
             <div class="mb-3">
-                {{ form.dispensing_bmr_online.label_tag }} 
+                <label for="{{ form.dispensing_bmr_online.id_for_label }}" class="form-label">
+                    {{ form.dispensing_bmr_online.label_tag }}
+                </label> 
                 {{ form.dispensing_bmr_online }}
             </div>
             <div class="mb-3">
-                {{ form.dispensing_logbooks.label_tag }} 
+                <label for="{{ form.dispensing_logbooks.id_for_label }}" class="form-label">
+                    {{ form.dispensing_logbooks.label_tag }}
+                </label> 
                 {{ form.dispensing_logbooks }}
             </div>
             <!-- Table for Reports and Actions Taken -->
@@ -228,7 +308,7 @@
                             <textarea class="form-control" name="dispensing_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
                         </td>
                         <td>
-                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                           <textarea class="form-control" name="dispensing_actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -239,55 +319,82 @@
          <div id="cleanroom-section" class="d-none">
             <h3>CLEAN ROOM</h3>
             <!-- Tick All Checkbox -->
-            <label>
-                {{ form.tick_all_cleanroom }} <strong>{{ form.tick_all_cleanroom.label }}</strong>
-              </label><br><br>
+            <div class="form-check">
+                {{ form.tick_all_cleanroom }}
+                <label class="form-check-label" for="{{ form.tick_all_cleanroom.id_for_label }}">
+                    <strong>{{ form.tick_all_cleanroom.label }}</strong>
+                </label>
+            </div><br><br>
             <div class="mb-3">
-                {{ form.cleanroom_cleanliness.label_tag }} 
+                <label for="{{ form.cleanroom_cleanliness.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_cleanliness.label_tag }}
+                </label> 
                 {{ form.cleanroom_cleanliness }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_status_board.label_tag }} 
+                <label for="{{ form.cleanroom_status_board.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_status_board.label_tag }}
+                </label> 
                 {{ form.cleanroom_status_board }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_gowning.label_tag }} 
+                <label for="{{ form.cleanroom_gowning.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_gowning.label_tag }}
+                </label> 
                 {{ form.cleanroom_gowning }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_bmr_online.label_tag }} 
+                <label for="{{ form.cleanroom_bmr_online.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_bmr_online.label_tag }}
+                </label> 
                 {{ form.cleanroom_bmr_online }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_logbooks.label_tag }} 
+                <label for="{{ form.cleanroom_logbooks.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_logbooks.label_tag }}
+                </label> 
                 {{ form.cleanroom_logbooks }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_footwear.label_tag }} 
+                <label for="{{ form.cleanroom_footwear.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_footwear.label_tag }}
+                </label> 
                 {{ form.cleanroom_footwear }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_filter.label_tag }} 
+                <label for="{{ form.cleanroom_filter.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_filter.label_tag }}
+                </label> 
                 {{ form.cleanroom_filter }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_cip.label_tag }} 
+                <label for="{{ form.cleanroom_cip.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_cip.label_tag }}
+                </label> 
                 {{ form.cleanroom_cip }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_bulk.label_tag }} 
+                <label for="{{ form.cleanroom_bulk.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_bulk.label_tag }}
+                </label> 
                 {{ form.cleanroom_bulk }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_bottle_batch.label_tag }} 
+                <label for="{{ form.cleanroom_bottle_batch.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_bottle_batch.label_tag }}
+                </label> 
                 {{ form.cleanroom_bottle_batch }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_bioburden.label_tag }} 
+                <label for="{{ form.cleanroom_bioburden.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_bioburden.label_tag }}
+                </label> 
                 {{ form.cleanroom_bioburden }}
             </div>
             <div class="mb-3">
-                {{ form.cleanroom_line_clearance.label_tag }} 
+                <label for="{{ form.cleanroom_line_clearance.id_for_label }}" class="form-label">
+                    {{ form.cleanroom_line_clearance.label_tag }}
+                </label> 
                 {{ form.cleanroom_line_clearance }}
             </div>
             <!-- Table for Reports and Actions Taken -->
@@ -304,7 +411,7 @@
                             <textarea class="form-control" name="cleanroom_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
                         </td>
                         <td>
-                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                           <textarea class="form-control" name="cleanroom_actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -315,55 +422,82 @@
         <div id="sterilization-section" class="d-none">
             <h3>STERILIZATION</h3>
             <!-- Tick All Checkbox -->
-            <label>
-                {{ form.tick_all_sterilization }} <strong>{{ form.tick_all_sterilization.label }}</strong>
-              </label><br><br>
+            <div class="form-check">
+                {{ form.tick_all_sterilization }}
+                <label class="form-check-label" for="{{ form.tick_all_sterilization.id_for_label }}">
+                    <strong>{{ form.tick_all_sterilization.label }}</strong>
+                </label>
+            </div><br><br>
             <div class="mb-3">
-                {{ form.sterilization_cleanliness.label_tag }} 
+                <label for="{{ form.sterilization_cleanliness.id_for_label }}" class="form-label">
+                    {{ form.sterilization_cleanliness.label_tag }}
+                </label> 
                 {{ form.sterilization_cleanliness }}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_line_clearance.label_tag }} 
+                <label for="{{ form.sterilization_line_clearance.id_for_label }}" class="form-label">
+                    {{ form.sterilization_line_clearance.label_tag }}
+                </label> 
                 {{ form.sterilization_line_clearance }}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_status_board.label_tag }} 
+                <label for="{{ form.sterilization_status_board.id_for_label }}" class="form-label">
+                    {{ form.sterilization_status_board.label_tag }} 
+                </label>
                 {{ form.sterilization_status_board }}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_calibration.label_tag }} 
+                <label for="{{ form.sterilization_calibration.id_for_label }}" class="form-label">
+                    {{ form.sterilization_calibration.label_tag }}
+                </label> 
                 {{ form.sterilization_calibration}}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_bmr_online.label_tag }} 
+                <label for="{{ form.sterilization_bmr_online.id_for_label }}" class="form-label">
+                    {{ form.sterilization_bmr_online.label_tag }}
+                </label> 
                 {{ form.sterilization_bmr_online}}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_logbooks.label_tag }} 
+                <label for="{{ form.sterilization_logbooks.id_for_label }}" class="form-label">
+                    {{ form.sterilization_logbooks.label_tag }}
+                </label> 
                 {{ form.sterilization_logbooks}}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_verify_rejections.label_tag }} 
+                <label for="{{ form.sterilization_verify_rejections.id_for_label }}" class="form-label">
+                    {{ form.sterilization_verify_rejections.label_tag }} 
+                </label>
                 {{ form.sterilization_verify_rejections}}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_bottle_batch.label_tag }} 
+                <label for="{{ form.sterilization_bottle_batch.id_for_label }}" class="form-label">
+                    {{ form.sterilization_bottle_batch.label_tag }} 
+                </label>
                 {{ form.sterilization_bottle_batch}}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_volume.label_tag }} 
+                <label for="{{ form.sterilization_volume.id_for_label }}" class="form-label">
+                    {{ form.sterilization_volume.label_tag }}
+                </label> 
                 {{ form.sterilization_volume}}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_bioburden.label_tag }} 
+                <label for="{{ form.sterilization_bioburden.id_for_label }}" class="form-label">
+                    {{ form.sterilization_bioburden.label_tag }}
+                </label> 
                 {{ form.sterilization_bioburden}}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_leak_testing.label_tag }} 
+                <label for="{{ form.sterilization_leak_testing.id_for_label }}" class="form-label">
+                    {{ form.sterilization_leak_testing.label_tag }} 
+                </label>
                 {{ form.sterilization_leak_testing}}
             </div>
             <div class="mb-3">
-                {{ form.sterilization_finished.label_tag }} 
+                <label for="{{ form.sterilization_finished.id_for_label }}" class="form-label">
+                    {{ form.sterilization_finished.label_tag }}
+                </label> 
                 {{ form.sterilization_finished}}
             </div>
             <!-- Table for Reports and Actions Taken -->
@@ -380,7 +514,7 @@
                             <textarea class="form-control" name="sterilization_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
                         </td>
                         <td>
-                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                           <textarea class="form-control" name="sterilization_actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -391,71 +525,106 @@
         <div id="packing-section" class="d-none">
             <h3>PACKING</h3>
             <!-- Tick All Checkbox -->
-            <label>
-                {{ form.tick_all_packing }} <strong>{{ form.tick_all_packing.label }}</strong>
-              </label><br><br>
+            <div class="form-check">
+                {{ form.tick_all_packing }}
+                <label class="form-check-label" for="{{ form.tick_all_packing.id_for_label }}">
+                    <strong>{{ form.tick_all_packing.label }}</strong>
+                </label>
+            </div><br><br>
             <div class="mb-3">
-                {{ form.packing_cleanliness.label_tag }} 
+                <label for="{{ form.packing_cleanliness.id_for_label }}" class="form-label">
+                    {{ form.packing_cleanliness.label_tag }}
+                </label> 
                 {{ form.packing_cleanliness }}
             </div>
             <div class="mb-3">
-                {{ form.packing_calibration.label_tag }} 
+                <label for="{{ form.packing_calibration.id_for_label }}" class="form-label">
+                    {{ form.packing_calibration.label_tag }}
+                </label> 
                 {{ form.packing_calibration }}
             </div>
             <div class="mb-3">
-                {{ form.packing_material_received.label_tag }} 
+                <label for="{{ form.packing_material_received.id_for_label }}" class="form-label">
+                    {{ form.packing_material_received.label_tag }}
+                </label> 
                 {{ form.packing_material_received }}
             </div>
             <div class="mb-3">
-                {{ form.packing_line_clearance.label_tag }} 
+                <label for="{{ form.packing_line_clearance.id_for_label }}" class="form-label">
+                    {{ form.packing_line_clearance.label_tag }}
+                </label> 
                 {{ form.packing_line_clearance }}
             </div>
             <div class="mb-3">
-                {{ form.packing_status_board.label_tag }} 
+                <label for="{{ form.packing_status_board.id_for_label }}" class="form-label">
+                    {{ form.packing_status_board.label_tag }}
+                </label> 
                 {{ form.packing_status_board }}
             </div>
             <div class="mb-3">
-                {{ form.packing_bmr_online.label_tag }} 
+                <label for="{{ form.packing_bmr_online.id_for_label }}" class="form-label">
+                    {{ form.packing_bmr_online.label_tag }}
+                </label> 
                 {{ form.packing_bmr_online  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_leak_testing.label_tag }} 
+                <label for="{{ form.packing_leak_testing.id_for_label }}" class="form-label">
+                    {{ form.packing_leak_testing.label_tag }}
+                </label> 
                 {{ form.packing_leak_testing  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_visual.label_tag }} 
+                <label for="{{ form.packing_visual.id_for_label }}" class="form-label">
+                    {{ form.packing_visual.label_tag }}
+                </label> 
                 {{ form.packing_visual  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_bottle_batch.label_tag }} 
+                <label for="{{ form.packing_bottle_batch.id_for_label }}" class="form-label">
+                    {{ form.packing_bottle_batch.label_tag }}
+                </label> 
                 {{ form.packing_bottle_batch  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_quality.label_tag }} 
+                <label for="{{ form.packing_quality.id_for_label }}" class="form-label">
+                    {{ form.packing_quality.label_tag }}
+                </label> 
                 {{ form.packing_quality  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_labels.label_tag }} 
+                <label for="{{ form.packing_labels.id_for_label }}" class="form-label">
+                    {{ form.packing_labels.label_tag }}
+                </label> 
                 {{ form.packing_labels  }}
             </div>
             <div class="mb-3">
-                {{ form.packing_weight_limits.label_tag }} 
+                <label for="{{ form.packing_weight_limits.id_for_label }}" class="form-label">
+                    {{ form.packing_weight_limits.label_tag }}
+                </label> 
                 {{ form.packing_weight_limits }}
             </div>
             <div class="mb-3">
-                {{ form.packing_retention.label_tag }} 
+                <label for="{{ form.packing_retention.id_for_label }}" class="form-label">
+                    {{ form.packing_retention.label_tag }}
+                </label> 
                 {{ form.packing_retention }}
             </div>
             <div class="mb-3">
-                {{ form.packing_logbooks.label_tag }} 
+                <label for="{{ form.packing_logbooks.id_for_label }}" class="form-label">
+                    {{ form.packing_logbooks.label_tag }}
+                </label> 
                 {{ form.packing_logbooks }}
             </div>
             <div class="mb-3">
-                {{ form.packing_verify_rejections.label_tag }} 
+                <label for="{{ form.packing_verify_rejections.id_for_label }}" class="form-label">
+                    {{ form.packing_verify_rejections.label_tag }} 
+                </label>
                 {{ form.packing_verify_rejections }}
             </div>
             <div class="mb-3">
-                {{ form.packing_status_labels.label_tag }} 
+                <label for="{{ form.packing_status_labels.id_for_label }}" class="form-label">
+                    {{ form.packing_status_labels.label_tag }}
+                </label>
                 {{ form.packing_status_labels }}
             </div>
             <!-- Table for Reports and Actions Taken -->
@@ -472,7 +641,7 @@
                             <textarea class="form-control" name="packing_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
                         </td>
                         <td>
-                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                           <textarea class="form-control" name="packing_actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -483,39 +652,58 @@
         <div id="periodic-section">
             <h3>PERIODIC DUTIES</h3>
             <!-- Tick All Checkbox -->
-            <label>
-              {{ form.tick_all_periodic }} <strong>{{ form.tick_all_periodic.label }}</strong>
-            </label><br><br>
+            <div class="form-check">
+                {{ form.tick_all_periodic }}
+                <label class="form-check-label" for="{{ form.tick_all_periodic.id_for_label }}">
+                    <strong>{{ form.tick_all_periodic.label }}</strong>
+                </label>
+            </div><br><br>
             <div class="mb-3">
-                {{ form.periodic_trainings.label_tag }} 
+                <label for="{{ form.periodic_trainings.id_for_label }}" class="form-label">
+                    {{ form.periodic_trainings.label_tag }}
+                </label> 
                 {{ form.periodic_trainings }}
             </div>
             <div class="mb-3">
-                {{ form.periodic_investigations.label_tag }} 
+                <label for="{{ form.periodic_investigations.id_for_label }}" class="form-label">
+                    {{ form.periodic_investigations.label_tag }}
+                </label> 
                 {{ form.periodic_investigations }}
             </div>
             <div class="mb-3">
-                {{ form.periodic_equipment_tags.label_tag }} 
+                <label for="{{ form.periodic_equipment_tags.id_for_label }}" class="form-label">
+                    {{ form.periodic_equipment_tags.label_tag }}
+                </label>
                 {{ form.periodic_equipment_tags }}
             </div>
             <div class="mb-3">
-                {{ form.periodic_validation.label_tag }} 
+                <label for="{{ form.periodic_validation.id_for_label }}" class="form-label">
+                    {{ form.periodic_validation.label_tag }} 
+                </label>
                 {{ form.periodic_validation }}
             </div>
             <div class="mb-3">
-                {{ form.periodic_calibration.label_tag }} 
+                <label for="{{ form.periodic_calibration.id_for_label }}" class="form-label">
+                    {{ form.periodic_calibration.label_tag }} 
+                </label>
                 {{ form.periodic_calibration }}
             </div>
             <div class="mb-3">
-                {{ form.periodic_colour_coding.label_tag }} 
+                <label for="{{ form.periodic_colour_coding.id_for_label }}" class="form-label">
+                    {{ form.periodic_colour_coding.label_tag }} 
+                </label>
                 {{ form.periodic_colour_coding }}
             </div>
             <div class="mb-3">
-                {{ form.periodic_lighting.label_tag }} 
+                <label for="{{ form.periodic_lighting.id_for_label }}" class="form-label">
+                    {{ form.periodic_lighting.label_tag }}
+                </label> 
                 {{ form.periodic_lighting }}
             </div>
             <div class="mb-3">
-                {{ form.periodic_cleanroom_qual.label_tag }} 
+                <label for="{{ form.periodic_cleanroom_qual.id_for_label }}" class="form-label">
+                    {{ form.periodic_cleanroom_qual.label_tag }} 
+                </label>
                 {{ form.periodic_cleanroom_qual }}
             </div>
             <!-- Table for Reports and Actions Taken -->
@@ -532,7 +720,7 @@
                             <textarea class="form-control" name="periodic_report" rows="3" placeholder="Write reports or escalations here..."></textarea>
                         </td>
                         <td>
-                           <textarea class="form-control" name="actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
+                           <textarea class="form-control" name="periodic_actions_taken" rows="3" placeholder="Describe actions taken here..."></textarea>
                         </td>
                     </tr>
                 </tbody>

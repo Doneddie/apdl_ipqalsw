@@ -5,4 +5,4 @@ def generate_pdf_and_send_email():
     # Send the email with the PDF attached
     send_email_with_attachment(pdf_data)
 
-    print(env('EMAIL_HOST'))  # Should print 'smtp.gmail.com' if the .env file is read correctly.
+
