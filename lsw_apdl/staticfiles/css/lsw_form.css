@@ -1,166 +1,239 @@
-/* lsw_form.css */
-:root {
-    --vintage-cyan: #00AEAE;
-    --modern-cyan: #00FFFF;
-    --pure-white: #FFFFFF;
-    --rich-black: #000013;
-    --retro-border: 2px solid var(--rich-black);
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    line-height: 1.6;
 }
 
-body {
-    background: var(--pure-white);
-    font-family: 'Courier New', monospace;
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 }
 
 h2 {
-    color: var(--rich-black);
-    font-family: 'Impact', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-bottom: var(--retro-border);
-    padding-bottom: 1rem;
+    color: #1a73e8;
+    text-align: center;
     margin-bottom: 2rem;
-    text-shadow: 2px 2px var(--vintage-cyan);
+    font-weight: 500;
+    font-size: 2rem;
 }
 
-/* Section Tabs */
 h3 {
-    background: var(--pure-white);
-    color: var(--rich-black);
-    padding: 1rem 2rem;
-    border: var(--retro-border);
-    border-radius: 0;
-    display: inline-block;
-    margin: -1rem -2rem 2rem;
-    position: relative;
-    z-index: 1;
-    box-shadow: 5px 5px 0 var(--vintage-cyan);
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Checkbox Grid Layout */
-.form-check {
-    background: rgba(255, 255, 255, 0.9);
-    border: var(--retro-border);
-    padding: 1rem;
-    margin: 0.5rem 0;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 1rem;
-}
-
-.form-check-input {
-    width: 1.5em;
-    height: 1.5em;
-    margin: 0;
-    border: var(--retro-border);
-}
-
-.form-check-label {
-    font-weight: bold;
-    color: var(--rich-black);
-    margin: 0;
-}
-
-/* Tick All Checkbox */
-.form-check.tick-all {
-    background: var(--vintage-cyan);
-    grid-column: 1 / -1;
-    margin-bottom: 2rem;
-}
-
-.form-check.tick-all .form-check-label {
-    color: var(--pure-white);
-    font-size: 1.1em;
-}
-
-/* Form Sections */
-#stores-section,
-#wtp-section,
-#dispensing-section,
-#cleanroom-section,
-#sterilization-section,
-#packing-section,
-#periodic-section {
-    background: var(--pure-white);
-    border: var(--retro-border);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    position: relative;
-    box-shadow: 10px 10px 0 var(--vintage-cyan);
-}
-
-/* Tables */
-.table {
-    border: var(--retro-border);
+    color: #1a73e8;
     margin-top: 2rem;
-    background: var(--pure-white);
-}
-
-.table th {
-    background: var(--vintage-cyan) !important;
-    color: var(--pure-white);
-    font-weight: bold;
-    text-transform: uppercase;
-    border: var(--retro-border) !important;
-}
-
-.table td {
-    border: var(--retro-border) !important;
-    background: rgba(0, 174, 174, 0.05);
-}
-
-/* Buttons */
-.btn-primary {
-    background: var(--vintage-cyan);
-    color: var(--rich-black);
-    border: var(--retro-border);
-    padding: 1rem 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: var(--modern-cyan);
-    color: var(--rich-black);
-    box-shadow: 5px 5px 0 var(--vintage-cyan);
-    transform: translate(-2px, -2px);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 /* Form Elements */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #5f6368;
+}
+
 .form-control {
-    border: var(--retro-border);
-    border-radius: 0;
-    background: rgba(0, 174, 174, 0.05);
-    padding: 0.75rem 1rem;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 0.75rem;
+    transition: border-color 0.3s;
 }
 
 .form-control:focus {
-    border-color: var(--rich-black);
-    box-shadow: 3px 3px 0 var(--vintage-cyan);
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+    outline: none;
 }
 
-/* Checkbox Grid Layout */
-.checkbox-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+/* Checkbox Styling */
+.form-check {
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    border: 2px solid #5f6368;
+    border-radius: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form-check-input:checked {
+    background-color: #1a73e8;
+    border-color: #1a73e8;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-check-label {
+    margin-left: 0.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    color: #202124;
+}
+
+/* Tick All Section Styling */
+.tick-all {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #1a73e8;
+}
+
+.tick-all .form-check-label {
+    font-weight: 500;
+    color: #1a73e8;
+}
+
+/* Table Styling */
+.table {
+    margin-top: 1.5rem;
     margin-bottom: 2rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-/* Responsive Design */
+.table th {
+    background-color: #f1f3f4;
+    color: #5f6368;
+    font-weight: 500;
+    border: none;
+    padding: 1rem;
+}
+
+.table td {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #1a73e8;
+    border-color: #1a73e8;
+    border-radius: 4px;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+}
+
+.btn-primary:hover {
+    background-color: #0d62d0;
+    border-color: #0d62d0;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .checkbox-grid {
-        grid-template-columns: 1fr;
+    .container {
+        padding: 1.5rem;
+        margin: 0.5rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
     }
     
     h3 {
-        font-size: 1.1rem;
-        padding: 0.75rem 1.5rem;
+        font-size: 1.5rem;
     }
+    
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+    
+    .form-check {
+        margin-bottom: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 1rem;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .btn-primary {
+        display: block;
+        width: 100%;
+    }
+    
+    .table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Focus styles for accessibility */
+input:focus, textarea:focus, button:focus {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
+}
+
+/* Section visibility transition */
+[id$="-section"] {
+    transition: opacity 0.3s ease-in-out;
+}
+
+[id$="-section"]:not(.d-none) {
+    opacity: 1;
+}
+
+/* Better textarea experience */
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Date input styling */
+input[type="date"] {
+    min-height: 38px;
+}
+
+/* Enhanced table styling */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Custom select styling */
+select.form-control {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2rem;
 }
