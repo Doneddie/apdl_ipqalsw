@@ -1,0 +1,166 @@
+/* lsw_form.css */
+:root {
+    --vintage-cyan: #00AEAE;
+    --modern-cyan: #00FFFF;
+    --pure-white: #FFFFFF;
+    --rich-black: #000013;
+    --retro-border: 2px solid var(--rich-black);
+}
+
+body {
+    background: var(--pure-white);
+    font-family: 'Courier New', monospace;
+}
+
+h2 {
+    color: var(--rich-black);
+    font-family: 'Impact', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: var(--retro-border);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px var(--vintage-cyan);
+}
+
+/* Section Tabs */
+h3 {
+    background: var(--pure-white);
+    color: var(--rich-black);
+    padding: 1rem 2rem;
+    border: var(--retro-border);
+    border-radius: 0;
+    display: inline-block;
+    margin: -1rem -2rem 2rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 5px 5px 0 var(--vintage-cyan);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Checkbox Grid Layout */
+.form-check {
+    background: rgba(255, 255, 255, 0.9);
+    border: var(--retro-border);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-check-input {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0;
+    border: var(--retro-border);
+}
+
+.form-check-label {
+    font-weight: bold;
+    color: var(--rich-black);
+    margin: 0;
+}
+
+/* Tick All Checkbox */
+.form-check.tick-all {
+    background: var(--vintage-cyan);
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+}
+
+.form-check.tick-all .form-check-label {
+    color: var(--pure-white);
+    font-size: 1.1em;
+}
+
+/* Form Sections */
+#stores-section,
+#wtp-section,
+#dispensing-section,
+#cleanroom-section,
+#sterilization-section,
+#packing-section,
+#periodic-section {
+    background: var(--pure-white);
+    border: var(--retro-border);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 10px 10px 0 var(--vintage-cyan);
+}
+
+/* Tables */
+.table {
+    border: var(--retro-border);
+    margin-top: 2rem;
+    background: var(--pure-white);
+}
+
+.table th {
+    background: var(--vintage-cyan) !important;
+    color: var(--pure-white);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: var(--retro-border) !important;
+}
+
+.table td {
+    border: var(--retro-border) !important;
+    background: rgba(0, 174, 174, 0.05);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--vintage-cyan);
+    color: var(--rich-black);
+    border: var(--retro-border);
+    padding: 1rem 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--modern-cyan);
+    color: var(--rich-black);
+    box-shadow: 5px 5px 0 var(--vintage-cyan);
+    transform: translate(-2px, -2px);
+}
+
+/* Form Elements */
+.form-control {
+    border: var(--retro-border);
+    border-radius: 0;
+    background: rgba(0, 174, 174, 0.05);
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--rich-black);
+    box-shadow: 3px 3px 0 var(--vintage-cyan);
+}
+
+/* Checkbox Grid Layout */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+        padding: 0.75rem 1.5rem;
+    }
+}
