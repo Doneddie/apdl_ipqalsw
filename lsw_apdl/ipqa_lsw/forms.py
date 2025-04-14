@@ -22,7 +22,11 @@ SECTION_CHOICES = [
 class LeaderStandardWorkForm(forms.Form):
     # -- General Information --
     name = forms.CharField(label="NAME *", max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'form-control', 'autocomplete': 'name' }))
-    shift = forms.ChoiceField(label="SHIFT *", choices=SHIFT_CHOICES, required=True,  widget=forms.CheckboxSelectMultiple)
+    shift = forms.MultipleChoiceField(
+    label="SHIFT *",
+    choices=SHIFT_CHOICES,
+    required=True,
+    widget=forms.CheckboxSelectMultiple)
     date = forms.DateField(
         label="DATE *", required=True,
         widget=forms.DateInput(attrs={'type': 'date', 'autocomplete': 'date'})

@@ -8,13 +8,7 @@
 }
 
 body {
-    background: repeating-linear-gradient(
-        45deg,
-        var(--pure-white),
-        var(--pure-white) 20px,
-        #f0f8ff 20px,
-        #f0f8ff 40px
-    );
+    background: var(--pure-white);
     font-family: 'Courier New', monospace;
 }
 
